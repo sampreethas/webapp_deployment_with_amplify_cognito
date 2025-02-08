@@ -1,70 +1,104 @@
-# webapp_deployment_with_amplify_cognito#
+# React App Deployment with AWS Amplify
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a **React application** deployed using **AWS Amplify**. Below are the steps followed to set up, configure, and deploy the application.
 
-## Available Scripts
+## Prerequisites
+Ensure you have the following installed before proceeding:
+- **Node.js & npm** (https://nodejs.org/)
+- **AWS CLI** (https://aws.amazon.com/cli/)
+- **Amplify CLI** (https://docs.amplify.aws/cli/start/install/)
+- **Git** (https://git-scm.com/)
+- A GitHub repository for version control
 
-In the project directory, you can run:
+## Installation & Setup
 
-### `npm start`
+### 1. Install AWS Amplify CLI
+```sh
+npm install -g @aws-amplify/cli
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Configure AWS Amplify
+```sh
+amplify configure
+```
+Follow the prompts to set up an AWS IAM user and configure credentials.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. Create a New React App
+```sh
+npx create-react-app <name-of-your-app>
+cd <name-of-your-app>
+```
 
-### `npm test`
+### 4. Initialize AWS Amplify
+```sh
+amplify init
+```
+Follow the on-screen prompts to set up Amplify for your project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 5. Add Authentication (AWS Cognito)
+```sh
+amplify add auth
+```
+Select the default configuration or customize as needed.
 
-### `npm run build`
+### 6. Deploy Amplify Resources
+```sh
+amplify push
+```
+This deploys the authentication and other Amplify services to AWS. You can view the app directly from AWS Amplify deployment section via a link.
+Any changes in repo will trigger CI/CD automatically with AWS Amplify.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`Example of a deployed app`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/user-attachments/assets/ace16316-6261-4b50-a56b-cc3cb3974708)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The deployment also contains link to github code, commit history and logs for detail analysis.
 
-### `npm run eject`
+![image](https://github.com/user-attachments/assets/1460ad9d-efc0-4b25-8efe-629808b3b55b)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 7. Install AWS Amplify Libraries
+```sh
+npm install aws-amplify @aws-amplify/ui-react
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 8. Start the React App from terminal
+```sh
+npm start
+```
+This launches the application in development mode.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Version Control 
 
-## Learn More
+### 9. Initialize Git Repository
+```sh
+git init
+git add .
+git commit -m "Initial commit"
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 10. Set Up Git Branch
+```sh
+git branch -M main
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 11. Connect to Remote Repository
+```sh
+git remote add origin <repository-URL>
+```
 
-### Code Splitting
+### 12. Push Code to GitHub
+```sh
+git push -u origin main
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Next Steps
+- Add additional AWS Amplify services like API, storage, or hosting as needed.
+- Customize authentication flows using AWS Cognito.
 
-### Analyzing the Bundle Size
+## References
+- [AWS Amplify Docs](https://docs.amplify.aws/)
+- [React Documentation](https://reactjs.org/)
+- [GitHub Docs](https://docs.github.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
