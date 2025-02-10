@@ -2,6 +2,9 @@
 
 This project is a **React application** deployed using **AWS Amplify**. Below are the steps followed to set up, configure, and deploy the application.
 
+![image](https://github.com/user-attachments/assets/65bca553-6590-4e6d-8d21-63069d35f64f)
+
+
 ## Prerequisites
 Ensure you have the following installed before proceeding:
 - **Node.js & npm** (https://nodejs.org/)
